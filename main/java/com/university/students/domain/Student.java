@@ -34,4 +34,4 @@ public abstract class Student {
     public String getDepartment() {
         return department;
     }
-}//
+}
