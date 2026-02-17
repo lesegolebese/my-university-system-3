@@ -34,5 +34,5 @@ public class Main {
         student2.displayStudentDetails();
         grad1.displayStudentDetails();
     }
-}
+}//
 
