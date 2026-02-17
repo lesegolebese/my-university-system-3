@@ -1,17 +1,38 @@
 package com.university.students;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import com.university.students.domain.Graduate;
+import com.university.students.domain.UndergraduateStudent;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args) {
+
+        UndergraduateStudent student1 = new UndergraduateStudent.Builder()
+                .setStudentId("U01")
+                .setName("Lethabo Makhura")
+                .setEmail("lethabo467@mycput.ac.za")
+                .setDepartment("informatics and design")
+                .setCreditHours(10)
+                .setScholarshipAmount(70000)
+                .build();
+
+        UndergraduateStudent student2 = new UndergraduateStudent.Builder()
+                .copy(student1)
+                .setName("lesego lebese")
+                .build();
+
+
+        Graduate grad1 = new Graduate.Builder()
+                .setStudentId("S01")
+                .setName("Mathebe Letago")
+                .setEmail("mathebe@mycput.ac.za")
+                .setDepartment("fashion Design")
+                .setResearchAssistant(true)
+                .setStipend(8000)
+                .build();
+
+        student1.displayStudentDetails();
+        student2.displayStudentDetails();
+        grad1.displayStudentDetails();
     }
-}//
+}
+
